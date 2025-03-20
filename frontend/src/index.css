@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+body {
+  background-color: #030712;
+  color: #f8fafc;
+  font-family: 'Tektur', sans-serif;
+}
+
+
+/* App Component */
+.app {
+  width: 100svw;
+  height: 100svh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.app h1 {
+  font-size: 3rem;
+  animation: popinabove 1000ms ease forwards;
+}
+
+.loginBlock,
+.OtpScreen {
+  position: relative;
+
+  width: 50%;
+  height: 40%;
+  border: #111827 1px solid;
+  box-shadow: 0 0 5px #1f2937;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  animation: popinbelow 1000ms ease forwards;
+  overflow: hidden;
+}
+
+.mailInput {
+
+  width: 80%;
+  background-color: #1f2937;
+  outline: none;
+  border: 1px solid #111827;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  padding: 10px;
+  text-align: center;
+  color: #f8fafc;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sendOtpButton, .verifyBtn,.logoutBtn {
+  width: 10%;
+  height: 10%;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  background-color: #1e40af;
+  color: #f8fafc;
+  border: none;
+  font-size: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button {
+  transition: all 500ms ease;
+}
+
+button:active {
+  scale: 0.98;
+}
+
+button:hover {
+  scale: 1.02;
+}
+
+/* OTP Screen */
+.OtpScreen{
+  width: 30%;
+}
+.inputs{
+  width: 50%;
+  height: 12%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.single{
+  width: 14%;
+  height: 100%;
+  border-radius: 10px;
+  outline: none;  
+  background-color: #1f2937;
+  border: #111827 1px solid;
+  box-shadow: 0 0 2px #f8fafc;
+  text-align: center;
+  color: #f8fafc;
+  font-size: 1.3rem;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.blocked{
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #f8fafca4;
+  background-color: #18181b;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.verifyBtn{
+  width: 20%;
+}
+.changeMail{
+  text-decoration: underline;
+  color:#0ea5e9;
+  cursor: pointer;
+}
+
+
+.mailBlock{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.errorText{
+  color: #be123c;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Dashboard */
+.dashboard{
+  width: 100svw;
+  height: 100svh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.info{
+  padding: 2rem;
+  font-size: 3rem;
+}
+.logoutBtn{
+  width: 7.5%;
+  height: 5%;
+}
+/* Animations */
+@keyframes popinabove {
+  from {
+    opacity: 0;
+    transform: translate(0, -100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes popinbelow {
+  from {
+    opacity: 0;
+    transform: translate(0, 100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+/* Loader */
+.loading{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #030712cc;
+}
+.spinner {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 6.4px solid #1e40af;
+  animation: spinner-bulqg1 0.8s infinite linear alternate,
+    spinner-oaa3wk 1.6s infinite linear;
+}
+
+@keyframes spinner-bulqg1 {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
+  }
+
+  12.5% {
+    clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 0%, 100% 0%, 100% 0%);
+  }
+
+  25% {
+    clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 100%);
+  }
+
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 50% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%);
+  }
+
+  62.5% {
+    clip-path: polygon(50% 50%, 100% 0, 100% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%);
+  }
+
+  75% {
+    clip-path: polygon(50% 50%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 50% 100%, 0% 100%);
+  }
+
+  100% {
+    clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 0% 100%);
+  }
+}
+
+@keyframes spinner-oaa3wk {
+  0% {
+    transform: scaleY(1) rotate(0deg);
+  }
+
+  49.99% {
+    transform: scaleY(1) rotate(135deg);
+  }
+
+  50% {
+    transform: scaleY(-1) rotate(0deg);
+  }
+
+  100% {
+    transform: scaleY(-1) rotate(-135deg);
+  }
+}
